@@ -14,8 +14,8 @@ export default function Register({ navigation })
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    return <View style={ styles.container }>
-        <ScrollView>
+    return <ScrollView style={ styles.container }>
+        <View>
             <Header text="Crie sua conta"/>
             <View style={ styles.formGroup }>
 
@@ -58,7 +58,6 @@ export default function Register({ navigation })
                 </View>
 
             </View>
-        </ScrollView>
-    </View>
-            
+        </View>
+    </ScrollView>   
 }
