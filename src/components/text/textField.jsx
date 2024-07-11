@@ -1,20 +1,22 @@
 import { TextInput, Text, View } from 'react-native';
 import { styles } from './textField.style.js';
 
-export default function TextBox(props)
+export default function TextField(props)
 {
-    return <View>
-        <Text style={ styles.label }>
-            { props.label }    
-        </Text>
+    return <>
+        { 
+            props.label && <Text style={ styles.label }>
+                { props.label }    
+            </Text>
+        }
         <TextInput
             style={ styles.input }
-            onChangeText={ props.onChangeText }
+            onChangeText={ (value) => props.onChangeText(value) }
             value={ props.value }
             onBlur={ props.onBlur }
             keyboardType={ props.keyboardType }
             placeholder={ props.placeholder }
             secureTextEntry={ props.isPassword }
         />
-    </View>
+    </>
 }
